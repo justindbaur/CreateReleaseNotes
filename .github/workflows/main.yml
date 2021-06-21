@@ -1,0 +1,31 @@
+ame: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Install & Test
+        run: |
+          npm install
+          npm test
+        env:
+          TEST_COLLECTIONURI: ${{ secrets.collectionUri }}
+          TEST_TEAMPROJECT: ${{ secrets.teamProject }}
+          TEST_ACCESSTOKEN: ${{ secrets.accessToken }}
+          TEST_QUERYID: ${{ secrets.queryId }}
