@@ -1,0 +1,44 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "4e72e919-c8ee-4814-9948-fb5f89aac917",
+    "name": "CreateReleaseNotes",
+    "friendlyName": "Create Release Notes",
+    "description": "Enter description",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Justin Baur",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "Create Release Notes",
+    "inputs": [
+        {
+            "name": "queryId",
+            "type": "string",
+            "required": true,
+            "label": "Work item query ID to use to find work items",
+            "helpMarkDown": "Stuff"
+        },
+        {
+            "name": "azureDevOpsAccessToken",
+            "type": "string",
+            "required": false,
+            "label": "Azure DevOps access token",
+            "helpMarkDown": "Stuff"
+        },
+        {
+            "name": "template",
+            "type": "string",
+            "required": true,
+            "label": "Template document",
+            "helpMarkDown": "Stuff"
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "CreateReleaseNotes.js"
+        }
+    }
+}

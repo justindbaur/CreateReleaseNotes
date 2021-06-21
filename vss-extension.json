@@ -1,0 +1,54 @@
+{
+    "manifestVersion": 1,
+    "id": "BM-VSTS-XplatGenerateReleaseNotes",
+    "version": "2.0.0",
+    "name": "Generate Release Notes (Crossplatform)",
+    "publisher": "richardfennellBM",
+    "description": "Generates a Markdown Release notes file.",
+    "CustomerQnASupport": {
+        "enableqna": "true",
+        "url": "https://github.com/rfennell/AzurePipelines/issues"
+    },
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "galleryFlags": [
+        "Public"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "tags": [
+        "Release",
+        "Package",
+        "Publish"
+    ],
+    "content": {
+        "details": {
+            "path": "readme.md"
+        },
+        "license": {
+            "path": "license.md"
+        }
+    },
+    "files": [
+        {
+            "path": "_build/dist",
+            "packagePath": "/task"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "XplatGenerate-Release-Notes",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "task"
+            }
+        }
+    ]
+}
